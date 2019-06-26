@@ -48,6 +48,6 @@ class RegressionEvaluator {
   def evaluate(dataset : DataFrame): Double = {
     val x = datasetToMatrix(dataset.select("features"))
     val y = datasetToMatrix(dataset.select("prediction"))
-    Bsum((y - x) :^ 2d) / (2 * x.rows * x.cols)
+    Bsum((y - x) :^ 2d) / (x.rows * x.cols)
   }
 }
